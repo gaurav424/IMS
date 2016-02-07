@@ -1,0 +1,107 @@
+<?php
+ session_start();
+	   if(isset($_SESSION['userid']))
+	    {
+			header("Location:../welcome.php?user_id=".$_SESSION['userid']."");
+			}
+ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='shortcut icon' type='image/x-icon' href='images/favicon.png' />
+
+    <title>Amity University Rajasthan : Department of IT</title>
+
+    <link href="css/metro.css" rel="stylesheet">
+    <link href="css/metro-icons.css" rel="stylesheet">
+    <link href="css/metro-responsive.css" rel="stylesheet">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/metro.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/prettify/run_prettify.js"></script>
+
+    <style>
+        .login-form {
+            width: 25rem;
+            height: 18.75rem;
+            position: fixed;
+            top: 35%;
+            margin-top: -9.375rem;
+            left: 50%;
+            margin-left: -12.5rem;
+            -webkit-transform: scale(.8);
+            transform: scale(.8);
+        }
+        .login-form img
+        {
+          height: 50%;
+          margin-left: 35%;
+              }
+        .login-form h1
+        {
+          color: #FFF;
+          margin-left: 10%;
+        }
+      .input-control input
+      {
+        width: 80%;
+        margin-left: 10%;
+      }
+      .signature img
+      {
+        width: 30%;
+      }
+      .signature
+      {
+        bottom:0.5%;
+        left: 1%;
+        position: absolute;
+        opacity:5;
+      }
+      .back
+      {
+        bottom:0.5%;
+        left: 1%;
+        position: absolute;
+        background: #FFF;
+      }
+
+
+    </style>
+
+    <script>
+
+        $(function(){
+            var form = $(".login-form");
+
+            form.css({
+                opacity: 1,
+                "-webkit-transform": "scale(1)",
+                "transform": "scale(1)",
+                "-webkit-transition": ".5s",
+                "transition": ".5s"
+            });
+        });
+    </script>
+</head>
+<body class="bg-darkTeal" >
+    <div class="login-form padding20">
+      <img src="images/amity.png">
+         <h1 class="text-light">AMITY UNIVERSITY</h1>
+          <form action="php/login.php" method="post">
+            <br/>
+              <div class="input-control password full-size" data-role="input">
+           <input type="password" name="password" id="user_password" placeholder="Access Code" required!>
+                <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+            </div>
+            <div  class="input-control password full-size" data-role="input">
+              <input type="submit" name="submit" value="Move In">
+            </div>
+        </form>
+    </div>
+   <div class="signature">
+      <div class="back"></div>
+      <img src="images/imorbis.png">
+   </div>
+  </body>
+</html>
